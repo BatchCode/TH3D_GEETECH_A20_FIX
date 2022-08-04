@@ -1,0 +1,33 @@
+"C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude" -C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -patmega2560 -cstk500 -PCOM4 -b115200 -D -e -Uflash:w:C:\Users\Julien\Desktop\firm_patched.hex:i 
+"C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude" -C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -patmega2560 -cstk500 -PCOM4 -b250000 -D -e -Uflash:w:C:\Users\Julien\Downloads\firmware.hex:i
+
+"C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude" -C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -p m2560 -c wiring -P COM4 -b 250000 -F 
+-U flash:w:C:\Users\Julien\Downloads\firmware.hex:i
+
+
+250000 stk500v1
+
+avrdude -v -F -V -c wiring -p ATmega2560 -P COM4 -b 115200 -U flash:r:flash_backup.hex:i
+
+
+"C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude"
+-C "C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf"
+flash:w:C:\Users\Julien\Downloads\firmware.hex:i
+
+
+## BATCH MODE ##
+set avr="C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude"
+set conf=-C "C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf"
+set flash=-U flash:w:C:\Users\Julien\Downloads\firmware.hex:i
+
+#set args=-v -V -c wiring -p ATmega2560 -P COM7 -b 115200
+#set args=-v -p m2560 -c wiring -P COM4 -b 250000 -F
+
+
+%avr% %conf% %args% %flash%
+
+# faire sauter les locks blabla
+https://forum.arduino.cc/t/arduino-mega-2560-non-reconnue-apres-flash-resolu/177745
+
+
+C:\Users\Julien\AppData\Local\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17/bin/avrdude -CC:\Users\Julien\AppData\Local\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17/etc/avrdude.conf -v -patmega2560 -cstk500v1 -PCOM7 -b19200 -e -Ulock:w:0x3F:m -Uefuse:w:0xFD:m -Uhfuse:w:0xD8:m -Ulfuse:w:0xFF:m 
